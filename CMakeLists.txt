@@ -14,8 +14,8 @@ endif()
 include (${STF_BASE}/cmake/stf-config.cmake)
 
 # Boost
-find_package (Boost 1.49.0)
-include_directories (SYSTEM ${Boost_INCLUDE_DIRS})
+#find_package (Boost 1.49.0)
+#include_directories (SYSTEM ${Boost_INCLUDE_DIRS})
 
 add_subdirectory(lib)
 
