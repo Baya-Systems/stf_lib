@@ -5,7 +5,7 @@ git_version_generator("${CMAKE_CURRENT_SOURCE_DIR}/stf_git_version.cpp.in"
                       "${CMAKE_CURRENT_BINARY_DIR}/stf_git_version.cpp"
                       "STF_GIT_SHA1")
 
-include_directories(${STF_BASE}/stf-inc)
+#include_directories(${STF_BASE}/stf-inc)
 
 file(GLOB libstf_SRC "*.cpp")
 
@@ -15,3 +15,4 @@ endif()
 
 add_library(stf ${libstf_SRC} "${CMAKE_CURRENT_BINARY_DIR}/stf_git_version.cpp")
 target_link_libraries(stf PUBLIC Boost::boost)
+target_include_directories(stf PUBLIC ${STF_BASE}/stf-inc)
