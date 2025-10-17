@@ -15,4 +15,6 @@ endif()
 
 add_library(stf ${libstf_SRC} "${CMAKE_CURRENT_BINARY_DIR}/stf_git_version.cpp")
 target_link_libraries(stf PUBLIC Boost::core Boost::container Boost::preprocessor Boost::optional Boost::pool)
-target_include_directories(stf PUBLIC ${STF_BASE}/stf-inc)
+# Refer to stf-lib files included in other files as stf-inc/<file_name>
+target_include_directories(stf PRIVATE ${STF_BASE}/stf-inc)
+target_include_directories(stf PUBLIC ${STF_BASE})
